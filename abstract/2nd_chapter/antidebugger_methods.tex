@@ -52,7 +52,7 @@
     subb  edx, edi
     jne   _being_debugged
     cmp   eax, elapsed ; elapsed содержит максимальное
-                       ; время выполнения без отладчика
+                       ; время выполнения участка кода
     jnbe  _being_debugged
     \end{verbatim}
 
