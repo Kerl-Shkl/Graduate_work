@@ -8,20 +8,35 @@
   \newpage
 
   \chapter{Общие сведения о работе отладчика}
+  Данная глава включает в себя общие сведения о работе отладчика, которые будут
+  затем использованы для защиты программ от него. Помимо этого также
+  рассматривается структура исполняемого файла в операционной системе Windows.
   \input{1st_chapter/debugger_work.tex}
   \input{1st_chapter/tracing.tex}
   \input{1st_chapter/break_point.tex}
   \input{1st_chapter/list_of_debuggers.tex}
   \input{1st_chapter/pe.tex}
+
   \chapter{Проектирование методов защиты от отладчика}
+  Данная глава посвящена разбору методов, которые могут обнаружить отладчик или
+  препятствовать процессу отладки. Также в этой главе разбираются задачи,
+  которые необходимо решить при реализации метода с подсчетом контрольной суммы.
   \input{2nd_chapter/antidebugger_methods.tex}
   \input{2nd_chapter/finding_section.tex}
   \input{2nd_chapter/base_load_address.tex}
   \input{2nd_chapter/table_base_reloc.tex}
   \input{2nd_chapter/function_disadvantage.tex}
+
   \chapter{Реализация}
-  \input{3rd_chapter/macros.tex}
+  Данная глава посвящена реализации выбранного метода защиты от отладчика. А
+  именно написанию макроса, реализующего нахождение контрольной суммы секции
+  кода. Помимо макроса также были написаны вспомогательные модули, которые
+  могут применяться при тестировании и отладке применяемой защиты. Принцип их
+  работы также освещается в данной главе.
+  \input{3rd_chapter/macros/algorithm.tex}
+  \input{3rd_chapter/macros/implementation.tex}
   \input{3rd_chapter/class.tex}
+
   \chapter{Тестирование}
   \input{4th_chapter/simple_program.tex}
 \end{document}
