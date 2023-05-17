@@ -55,3 +55,70 @@
 \captionsetup[table]{format=my_table_format, labelformat=gosttable}
 \renewcommand{\thesubfigure}{\asbuk{subfigure}}
 %-------------------------------------------  
+
+%------------- Title (headers) -------------  
+\usepackage{titlesec}
+
+\titleformat{\chapter}  % command 
+    [block]             % shape
+    {\filcenter}        % format
+    {\textbf{\MakeUppercase{\chaptertitlename} \thechapter.}} % label
+    {\wordsep}          % sep
+    {\bfseries}         % before
+    {}                  % after
+ 
+\titleformat{\section}
+    {\normalsize\bfseries\filcenter}
+    {\thesection.}
+    {\wordsep}
+    {}
+
+\titleformat{\subsection}
+    {\normalsize\filcenter}
+    {\thesubsection.}
+    {\wordsep}
+    {}
+
+\titlespacing*{\chapter}{0pt}{-30pt}{10pt}
+\titlespacing*{\section}{0pt}{10pt}{10pt}
+\titlespacing*{\subsection}{0pt}{10pt}{10pt}
+%-------------------------------------------  
+
+%------------ Page indentation -------------
+\setlength{\parindent}{1.25cm}
+\usepackage{geometry}
+\geometry{left=3cm}
+\geometry{right=1cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+%-------------------------------------------  
+
+
+%------------ items lists -----------------
+\usepackage{enumitem}
+\makeatother
+%\setlist{nolistsep, leftmargin=0pt, 
+%        itemindent=\dimexpr\labelwidth+\labelsep\relax}
+\setlist{nolistsep, leftmargin=0pt, labelindent=\parindent,
+         listparindent=\parindent, labelwidth=10pt, itemindent=!}
+\renewcommand{\labelitemi}{---}
+%-------------------------------------------  
+
+%---------- table of contents --------------
+\usepackage{tocloft}
+
+\renewcommand{\cfttoctitlefont}{\normalsize\hspace{0.38\textwidth}
+                                \bfseries\MakeUppercase}
+\renewcommand{\cftbeforetoctitleskip}{-1em}
+\renewcommand{\cftaftertoctitleskip}{1em}
+%\renewcommand{\cftaftertoctitle}{\mbox{}\hfill \\ \mbox{}\hfill{\footnotesize Стр.}\vspace{-2.5em}}
+\renewcommand{\cftchapfont}{\normalsize \chaptername}
+\renewcommand{\cftsecfont}{\hspace{31pt}}
+\renewcommand{\cftsubsecfont}{\hspace{11pt}}
+\renewcommand{\cftbeforechapskip}{1em}
+\renewcommand{\cftparskip}{-1mm}
+\renewcommand{\cftdotsep}{1}
+\setcounter{tocdepth}{2} % задать глубину оглавления — до subsection включительно
+
+\AtBeginDocument{\renewcommand{\contentsname}{Содержание}}
+%-------------------------------------------  
