@@ -32,6 +32,8 @@ ASLR, есть таблица базовых релокаций. При помо
 
 \begin{table}[h!]
   \centering
+  \caption{Структура блока исправлений}
+  \label{tab:fixup_block}
   \begin{tabularx} {\textwidth} {
       | >{\raggedright \arraybackslash \hsize=.17\hsize}X 
       | >{\arraybackslash \hsize=.13\hsize}X
@@ -51,8 +53,6 @@ ASLR, есть таблица базовых релокаций. При помо
       структуру.\\
     \hline
   \end{tabularx}  
-  \caption{Структура блока исправлений}
-  \label{tab:fixup_block}
 \end{table}
 
 После описанной структуры следуют поля таблицы. Каждое поле занимает 2 байта и
@@ -60,6 +60,7 @@ ASLR, есть таблица базовых релокаций. При помо
 
 \begin{table}[h!]
   \centering
+  \caption{Структура поля таблицы базовых релокаций}
   \begin{tabularx}{\textwidth}{
       | >{\raggedright \arraybackslash \hsize=.17\hsize}X 
       | >{\raggedright \arraybackslash \hsize=.13\hsize}X
@@ -79,7 +80,6 @@ ASLR, есть таблица базовых релокаций. При помо
     коррекцию. \\ 
     \hline
   \end{tabularx}
-  \caption{Структура поля таблицы базовых релокаций}
   \label{tab:fixup_field}
 \end{table}
 
