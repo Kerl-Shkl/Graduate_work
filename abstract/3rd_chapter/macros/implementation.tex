@@ -74,7 +74,7 @@
   #define EXAMPLE_MACRO(out_var) __asm \
   { \
     __asm mov eax, value    /* Place value in eax */ \
-    __asm cmp eax, svalue   /* compare first and second value */ \
+    __asm cmp eax, svalue   /* Compare first and second value */ \
     __asm je l1 \
     __asm mov out_var, eax \ 
     __asm jmp end \
