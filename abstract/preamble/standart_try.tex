@@ -111,14 +111,26 @@
                                 \bfseries\MakeUppercase}
 \renewcommand{\cftbeforetoctitleskip}{-1em}
 \renewcommand{\cftaftertoctitleskip}{1em}
-%\renewcommand{\cftaftertoctitle}{\mbox{}\hfill \\ \mbox{}\hfill{\footnotesize Стр.}\vspace{-2.5em}}
-\renewcommand{\cftchapfont}{\normalsize \chaptername}
-\renewcommand{\cftsecfont}{\hspace{31pt}}
-\renewcommand{\cftsubsecfont}{\hspace{11pt}}
-\renewcommand{\cftbeforechapskip}{1em}
+\renewcommand{\cftchappagefont}{\normalsize\normalfont} % номер страницы у глав
+\renewcommand{\cftchapfont}{\normalsize}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftsecdotsep}} % точки между главой и
+                                                          % страницей
+\renewcommand{\cftsecindent}{0em}
+\renewcommand{\cftsubsecindent}{0em}
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftsubsecaftersnum}{.}
+%\renewcommand{\cftsubsecfont}{\hspace{11pt}}
+\renewcommand{\cftbeforechapskip}{0pt} % убирает разрыв между главами
 \renewcommand{\cftparskip}{-1mm}
 \renewcommand{\cftdotsep}{1}
 \setcounter{tocdepth}{2} % задать глубину оглавления — до subsection включительно
 
 \AtBeginDocument{\renewcommand{\contentsname}{Содержание}}
+
 %-------------------------------------------  
+
+\newcommand{\StdChapter}[1]{
+      \stepcounter{chapter}
+      \chapter*{ГЛАВА \thechapter. \MakeUppercase{#1}}
+      \addcontentsline{toc}{chapter}{Глава \thechapter. #1}
+}
