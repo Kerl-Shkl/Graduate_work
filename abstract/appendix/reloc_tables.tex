@@ -1,0 +1,55 @@
+%! TEX root=../main.tex
+
+\chapter{\,}
+\label{app:tables}
+
+\begin{table}[h!]
+  \centering
+  \caption{Структура блока исправлений}
+  \label{tab:fixup_block}
+  \begin{tabularx} {\textwidth} {
+      | >{\raggedright \arraybackslash \hsize=.17\hsize}X 
+      | >{\arraybackslash \hsize=.13\hsize}X
+      | >{\arraybackslash \hsize=.25\hsize}X
+      | >{\arraybackslash \hsize=.45\hsize}X|
+    } 
+    \hline 
+    \textbf{Смещение} & \textbf{Размер} & \textbf{Поле} & \textbf{Значение} \\
+    \hline 
+    0 & 4 & Относительный виртуальный адрес страницы &
+      Базовый адрес загрузки и относительный виртуальный адрес
+      страницы прибавляется к каждому смещению в таблице, чтобы получить
+      виртуальный адрес по которому необходимо провести исправление \\
+    \hline
+    4 & 4 & Размер блока исправлений &
+      Общее количество байтов, занимаемых блоком исправлений, включая эту
+      структуру.\\
+    \hline
+  \end{tabularx}  
+\end{table}
+
+\begin{table}[h!]
+  \centering
+  \caption{Структура поля таблицы базовых релокаций}
+  \begin{tabularx}{\textwidth}{
+      | >{\raggedright \arraybackslash \hsize=.17\hsize}X 
+      | >{\raggedright \arraybackslash \hsize=.13\hsize}X
+      | >{\arraybackslash \hsize=.25\hsize}X
+      | >{\arraybackslash \hsize=.45\hsize}X|
+    } 
+    \hline
+    \textbf{Смещение} & \textbf{Размер} & \textbf{Поле} & \textbf{Значение} \\
+    \hline
+    0 & 4 бита & Тип & Значение, размещенное в старших четырех битах слова, 
+    указывает на тип исправления. Всего типов исправлений может быть 16. Каждый
+    тип указывает, как провести коррекцию значения в памяти.\\
+    \hline
+    0 & 12 бит & Смещение & Значение, размещенное в младших двенадцати битах
+    слова, указывает смещение относительно относительного виртуального адреса
+    страницы. Это смещение указывает место, где необходимо произвести
+    коррекцию. \\ 
+    \hline
+  \end{tabularx}
+  \label{tab:fixup_field}
+\end{table}
+
