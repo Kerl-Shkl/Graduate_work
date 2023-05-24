@@ -3,13 +3,17 @@
 \input{preamble/standart_try.tex}
 
 \begin{document}
+
+  
   \newpage
 
   \tableofcontents
+  \thispagestyle{empty}
   \newpage
 
   \chapter*{Введение}
   \input{introduction/introduction.tex}
+  \addcontentsline{toc}{chapter}{Введение}
 
   \StdChapter{Общие сведения о работе отладчика}
   %\chapter{Общие сведения о работе отладчика}
@@ -47,8 +51,12 @@
 
   \chapter*{Заключение}
   \input{conclusion/conclusion.tex}
+  \addcontentsline{toc}{chapter}{Заключение}
 
   \appendix
+  %\pagestyle{apppages}
   \input{appendix/reloc_tables.tex}
   \input{appendix/macros.tex}
+  %\pagestyle{plain}
+  %\addcontentsline{toc}{chapter}{Приложения А--Б}
 \end{document}
