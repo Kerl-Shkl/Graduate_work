@@ -6,8 +6,8 @@
 \label{app:tables}
 
 \begin{table}[h!]
-  \centering
   \caption{Структура блока исправлений}
+  \centering
   \label{tab:fixup_block}
   \begin{tabularx} {\textwidth} {
       | >{\raggedright \arraybackslash \hsize=.17\hsize}X 
@@ -16,7 +16,10 @@
       | >{\arraybackslash \hsize=.45\hsize}X|
     } 
     \hline 
-    \textbf{Смещение} & \textbf{Размер} & \textbf{Поле} & \textbf{Значение} \\
+    \multicolumn{1}{|c|}{Смещение} &
+    \multicolumn{1}{c|}{Размер} &
+    \multicolumn{1}{c|}{Поле} &
+    \multicolumn{1}{c|}{Значение}  \\
     \hline 
     0 & 4 & Относительный виртуальный адрес страницы &
       Базовый адрес загрузки и относительный виртуальный адрес
@@ -30,28 +33,74 @@
   \end{tabularx}  
 \end{table}
 
-\begin{table}[h!]
-  \centering
-  \caption{Структура поля таблицы базовых релокаций}
-  \begin{tabularx}{\textwidth}{
+\begin{xltabular}{\textwidth}{
       | >{\raggedright \arraybackslash \hsize=.17\hsize}X 
       | >{\raggedright \arraybackslash \hsize=.13\hsize}X
       | >{\arraybackslash \hsize=.25\hsize}X
       | >{\arraybackslash \hsize=.45\hsize}X|
-    } 
-    \hline
-    \textbf{Смещение} & \textbf{Размер} & \textbf{Поле} & \textbf{Значение} \\
-    \hline
-    0 & 4 бита & Тип & Значение, размещенное в старших четырех битах слова, 
-    указывает на тип исправления. Всего типов исправлений может быть 16. Каждый
-    тип указывает, как провести коррекцию значения в памяти.\\
-    \hline
-    0 & 12 бит & Смещение & Значение, размещенное в младших двенадцати битах
-    слова, указывает смещение относительно относительного виртуального адреса
-    страницы. Это смещение указывает место, где необходимо произвести
-    коррекцию. \\ 
-    \hline
-  \end{tabularx}
-  \label{tab:fixup_field}
-\end{table}
+  }
+
+  \caption{Структура поля таблицы базовых релокаций}
+  \label{tab:fixup_field}\\
+
+  \hline
+  \multicolumn{1}{|c|}{Смещение} &
+  \multicolumn{1}{c|}{Размер} &
+  \multicolumn{1}{c|}{Поле} &
+  \multicolumn{1}{c|}{Значение}  \\
+  \endfirsthead
+
+  \multicolumn{4}{l}%
+  {Окончание таблицы А.2} \\
+  \hline
+  \multicolumn{1}{|c|}{Смещение} &
+  \multicolumn{1}{c|}{Размер} &
+  \multicolumn{1}{c|}{Поле} &
+  \multicolumn{1}{c|}{Значение}  \\
+  \endhead
+  
+  \multicolumn{4}{r}{{Продолжение таблицы на следующей странице}} \\ 
+  \endfoot
+
+  \endlastfoot
+  \hline
+  0 & 4 бита & Тип & Значение, размещенное в старших четырех битах слова, 
+  указывает на тип исправления. Всего типов исправлений может быть 16. Каждый
+  тип указывает, как провести коррекцию значения в памяти.\\
+  \hline
+  0 & 12 бит & Смещение & Значение, размещенное в младших двенадцати битах
+  слова, указывает смещение относительно относительного виртуального адреса
+  страницы. Это смещение указывает место, где необходимо произвести
+  коррекцию. \\ 
+  \hline
+
+\end{xltabular}
+
+%\begin{table}[h!]
+%  \centering
+%  \caption{Структура поля таблицы базовых релокаций}
+%  \begin{tabularx}{\textwidth}{
+%      | >{\raggedright \arraybackslash \hsize=.17\hsize}X 
+%      | >{\raggedright \arraybackslash \hsize=.13\hsize}X
+%      | >{\arraybackslash \hsize=.25\hsize}X
+%      | >{\arraybackslash \hsize=.45\hsize}X|
+%    } 
+%    \hline
+%    \multicolumn{1}{|c|}{Смещение} &
+%    \multicolumn{1}{c|}{Размер} &
+%    \multicolumn{1}{c|}{Поле} &
+%    \multicolumn{1}{c|}{Значение}  \\
+%    \hline
+%    0 & 4 бита & Тип & Значение, размещенное в старших четырех битах слова, 
+%    указывает на тип исправления. Всего типов исправлений может быть 16. Каждый
+%    тип указывает, как провести коррекцию значения в памяти.\\
+%    \hline
+%    0 & 12 бит & Смещение & Значение, размещенное в младших двенадцати битах
+%    слова, указывает смещение относительно относительного виртуального адреса
+%    страницы. Это смещение указывает место, где необходимо произвести
+%    коррекцию. \\ 
+%    \hline
+%  \end{tabularx}
+%  \label{tab:fixup_field}
+%\end{table}
 

@@ -21,6 +21,7 @@
 \frenchspacing
 
 \usepackage{tabularx}
+\usepackage{xltabular}
 
 \usepackage{ragged2e}
 
@@ -28,15 +29,15 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[R]{\small \thepage}
+\fancyfoot[C]{\small \thepage}
 \fancyheadoffset{0mm}
 \fancyfootoffset{0mm}
-\setlength{\headheight}{17pt}
+%\setlength{\headheight}{17pt}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{ 
     \fancyhf{}
-    \rhead{\small \thepage}}
+    \cfoot{\small \thepage}}
 \setcounter{page}{5} % начать нумерацию страниц с №5
 %-------------------------------------------  
 
@@ -44,15 +45,25 @@
 \usepackage[tableposition=top]{caption}
 \usepackage{subcaption}
 \DeclareCaptionLabelFormat{gostfigure}{Рис. #2}
-\DeclareCaptionLabelFormat{gosttable}{Таблица #2}
+\DeclareCaptionLabelFormat{gosttable}{Таблица \Alph{appendixCounter}.#2}
 \DeclareCaptionLabelFormat{gostsubfigure}{#2.}
-\DeclareCaptionFormat{my_table_format}{\hfill #1 \par #3}
+\DeclareCaptionFormat{my_new_table_format}{#1#2#3}
+%\DeclareCaptionFormat{my_table_format}{\hfill #1 \par #3}
+\DeclareCaptionLabelSeparator{tabsep}{~---~}
 \DeclareCaptionLabelSeparator{gost}{~}
 \captionsetup{labelsep=gost}
+
 \captionsetup[figure]{labelformat=gostfigure, singlelinecheck=off, 
                       justification=centering}
+
 \captionsetup[subfigure]{labelformat=gostsubfigure}
-\captionsetup[table]{format=my_table_format, labelformat=gosttable}
+
+\captionsetup[table]{singlelinecheck=off,
+                     format=my_new_table_format,
+                     justification=RaggedRight,
+                     labelformat=gosttable,
+                     labelsep=tabsep}
+
 \renewcommand{\thesubfigure}{\asbuk{subfigure}}
 %-------------------------------------------  
 
@@ -62,7 +73,7 @@
 \titleformat{\chapter}  % command 
     [block]             % shape
     {\filcenter}        % format
-    {\textbf{\MakeUppercase{\chaptertitlename} \thechapter.}} % label
+    {\textbf{\thechapter.}} % label
     {\wordsep}          % sep
     {\bfseries}         % before
     {}                  % after
@@ -79,7 +90,7 @@
     {\wordsep}
     {}
 
-\titlespacing*{\chapter}{0pt}{-30pt}{10pt}
+\titlespacing*{\chapter}{0pt}{-30pt}{15pt}
 \titlespacing*{\section}{0pt}{10pt}{10pt}
 \titlespacing*{\subsection}{0pt}{10pt}{10pt}
 %-------------------------------------------  
@@ -152,8 +163,8 @@
 
 \newcommand{\StdChapter}[1]{
       \stepcounter{chapter}
-      \chapter*{ГЛАВА \thechapter. \MakeUppercase{#1}}
-      \addcontentsline{toc}{chapter}{Глава \thechapter. #1}
+      \chapter*{\thechapter. #1}
+      \addcontentsline{toc}{chapter}{\thechapter. #1}
 }
 
 \newcounter{appendixCounter}
