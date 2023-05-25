@@ -225,3 +225,12 @@
 \usepackage[figure, table]{totalcount}
 \DeclareTotalCounter{appendixCounter}
 %------------------------------------------
+
+%------------- Bibliography --------------
+\makeatletter
+\renewcommand*{\@biblabel}[1]{\hfill#1}
+\makeatother
+\AtBeginDocument{\renewcommand\bibname{Список литературы}}
+%------------------------------------------
+
+

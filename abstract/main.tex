@@ -5,7 +5,6 @@
 \begin{document}
   
   \input{the_abstract/the_abstract.tex}
-  \thispagestyle{empty}
   \newpage
 
   \tableofcontents
@@ -54,10 +53,11 @@
   \input{conclusion/conclusion.tex}
   \addcontentsline{toc}{chapter}{Заключение}
 
+  \input{bibliography/bibliography.tex}
+
   \appendix
   %\pagestyle{apppages}
   \input{appendix/reloc_tables.tex}
   \input{appendix/macros.tex}
-  %\pagestyle{plain}
-  %\addcontentsline{toc}{chapter}{Приложения А--Б}
+
 \end{document}
