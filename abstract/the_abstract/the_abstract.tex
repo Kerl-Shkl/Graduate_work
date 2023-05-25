@@ -1,0 +1,36 @@
+%! TEX root = ../main.tex
+\chapter*{Реферат}
+
+\begin{center}
+  \ztotpages\ с.\,, \totalfigures\ рис.\,, \totaltables\ таб.\,, 
+  \totalappendixCounters\ прил.\\
+  \vspace{4mm}
+  \MakeUppercase{отладчик, защита программ, WinAPI, антиотладочные техники,
+  ассемблер, дизассемблер, базовый адрес загрузки, контрольная сумма,
+  PE-формат.}
+\end{center}
+
+В данной работе проектируется механизм защиты программы от изменения ее
+исходного кода. Механизм основан на нахождении контрольной суммы секции кода.
+Алгоритм нахождения контрольной суммы реализован на языке ассемблера. Для
+проведения тестирования написана программа на языке C. Реализованы модули на
+языке C++, предоставляющие набор функций для работы с секциями PE-файла.
+
+%\vspace{3cm}
+%{\let\clearpage\relax \chapter*{bar}}
+
+\chapter*{Abstract}
+\begin{center}
+  \ztotpages\ p.\,, \totalfigures\ pic.\,, \totaltables\ tab.\,, 
+  \totalappendixCounters\ app.\\
+  \vspace{4mm}
+  \MakeUppercase{debugger, program protection, WinAPI, anti-debugging techniques,
+  assembler, disassembler, base load address, cyclic redundancy check,
+  PE-format.}
+\end{center}
+
+In this paper, a mechanism is designed to protect the program from changing the
+source code. The mechanism is based on finding the CRC of text section. The
+algorithm for finding the CRC is implemented in assembly language. A program for
+testing is developed in C. Modules are implemented in C++ language, providing a
+set of functions for working with sections of a PE-file.
