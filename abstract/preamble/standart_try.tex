@@ -38,7 +38,7 @@
 \fancypagestyle{plain}{ 
     \fancyhf{}
     \cfoot{\small \thepage}}
-\setcounter{page}{5} % начать нумерацию страниц с №5
+%\setcounter{page}{5} % начать нумерацию страниц с №5
 %-------------------------------------------  
 
 %------- Appendix settings ----------
@@ -95,7 +95,7 @@
 
 \titleformat{\subsection}
     {\normalsize\filcenter}
-    {\thesubsection.}
+    {\thesubsection}
     {\wordsep}
     {}
 
@@ -233,4 +233,11 @@
 \AtBeginDocument{\renewcommand\bibname{Список литературы}}
 %------------------------------------------
 
+%------------ For title page -------------
+\usepackage{pdfpages}
+%------------------------------------------
 
+%-------------- Stolyarov -----------------
+\clubpenalty=9999
+\widowpenalty=9999
+%------------------------------------------
