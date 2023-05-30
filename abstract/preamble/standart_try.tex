@@ -88,20 +88,20 @@
     {}                  % after
  
 \titleformat{\section}
-    {\normalsize\bfseries\filcenter}
-    {\thesection.}
+    {\normalsize\bfseries}
+    {\thesection}
     {\wordsep}
     {}
 
 \titleformat{\subsection}
-    {\normalsize\filcenter}
+    {\normalsize}
     {\thesubsection}
     {\wordsep}
     {}
 
 \titlespacing*{\chapter}{0pt}{-30pt}{15pt}
-\titlespacing*{\section}{0pt}{10pt}{10pt}
-\titlespacing*{\subsection}{0pt}{10pt}{10pt}
+\titlespacing*{\section}{\parindent}{10pt}{10pt}
+\titlespacing*{\subsection}{\parindent}{10pt}{10pt}
 %-------------------------------------------  
 
 %------------ Page indentation -------------
@@ -171,8 +171,10 @@
 %-------------------------------------------  
 
 \newcommand{\StdChapter}[1]{
+      \newpage
       \stepcounter{chapter}
-      \chapter*{\thechapter. #1}
+      %\chapter*{\thechapter. #1}
+      \textbf{\thechapter \ #1} \vspace{4mm} \par
       \addcontentsline{toc}{chapter}{\thechapter. #1}
 }
 
