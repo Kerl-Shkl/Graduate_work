@@ -1,9 +1,7 @@
 %! TEX root = ../main.tex
 
-%\chapter*{Приложение Б}
-\StdAppendix{обязательное}
-            {Листинг макроса для нахождения контрольной суммы}
-\pagestyle{plain}
+\StdAppendixx{обязательное}
+             {Листинг макроса для нахождения контрольной суммы}
 
 \lstinputlisting[classoffset=0, 
                  language={[Visual]C++}, deletekeywords={and, xor},
@@ -13,23 +11,10 @@
                                jge,push,pop,test,
                                jnz,inc},
                  keywordstyle=\color{blue},
-                 classoffset=0,
-                 firstline=1,
-                 lastline=35]
-                  {../code/macros.asm}
-\newpage
-\pagestyle{apppages}
-\lstinputlisting[classoffset=0, 
-                 language={[Visual]C++}, deletekeywords={and, xor},
-                 classoffset=1,
-                 morekeywords={and,xor,mov,jmp,add,
-                               lea,cmp,je,jg,jl,
-                               jge,push,pop,test,
-                               jnz,inc},
-                 keywordstyle=\color{blue},
-                 classoffset=0,
-                 firstline=36, firstnumber=36 ]
-                  {../code/macros.asm}
-\begin{center}
-  Рис. \Alph{appendixCounter}.1. Листинг макроса для нахождения контрольной суммы
-\end{center}
+                 classoffset=0]
+                 {../code/macros.asm}
+
+\begin{figure}[h!]
+  \centering
+  \caption{Листинг макроса для нахождения контрольной суммы}
+\end{figure}
