@@ -44,7 +44,7 @@
 
 \begin{figure}[htpb]
   \centering
-  \includegraphics[width=\textwidth]{check_pass_section_croped.png}
+  \includegraphics[width=0.8\textwidth]{check_pass_section_croped.png}
   \caption{Окно отладчика при взломе программы без защиты}
   \label{fig:disas_no_protect}
 \end{figure}
@@ -62,7 +62,6 @@
 Таким образом в регистр \verb!eax! будет занесено значение 0, как и требует того
 алгоритм программы при вводе корректного ключа. А условный переход выполняться
 не будет .
-
 
 На рисунке \ref{fig:cracked_unlock} представлена работа полученной таким образом
 программы.
@@ -122,19 +121,18 @@
 
 Как видно из рисунка \ref{fig:protection_work}, разработанная система
 обеспечивает достойную защиту приложения.
-\newpage
+%\newpage
 
 Также стоит отметь, что если в отладчике установить точку останова, то он
 занесет в первый байт инструкции значение \verb!CC!. Таким образом контрольная
-сумма кода изменится и разработанный алгоритм позволяет это обнаружить. Данная
-особенность защиты проиллюстрирована на рисунке \ref{fig:break_poin_catch}.
-
-\begin{figure}[htpb]
-  \centering
-  \includegraphics[width=0.8\textwidth]{Catch_breakpoint.png}
-  \caption{Обнаружение системой защиты установленной точки останова}
-  \label{fig:break_poin_catch}
-\end{figure}
+сумма кода изменится и разработанный алгоритм позволяет это обнаружить.
+%Данная особенность защиты проиллюстрирована на рисунке \ref{fig:break_poin_catch}.
+%\begin{figure}[htpb]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{Catch_breakpoint.png}
+%  \caption{Обнаружение системой защиты установленной точки останова}
+%  \label{fig:break_poin_catch}
+%\end{figure}
 
 В ходе тестирования было выявлено, что при передачи различных регистров в
 вызов макроса максимальная длина повторяющихся байт равна 9:
